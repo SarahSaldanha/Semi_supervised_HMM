@@ -1,42 +1,15 @@
-
-library(dplyr)          ## data manipulation
-library(tidyr)          ## data manipulation
-library(lubridate)      ## data manipulation date & time
-library(ggplot2)        ## visualization
-library(viridis)        ## colour palette
-library(RColorBrewer)   ## colour palette
-library(sf)             ## data manipulation spatial data
-library(kableExtra)
-library(janitor)
-library(raster)
-library(RStoolbox)
-library(lubridate)
+library(dplyr)       
+library(tidyr)         
+library(lubridate)      
+library(ggplot2)   
 library(stringr)
-library(reshape2)
-library(chron)
-library(assertthat)
-library(maptools)
-library (stringr)
-library (rgdal)
-library(lubridate)
-library(zoo)
-library(plotly)
-library(plyr)
-library(geosphere)
-library(data.table)
-library("momentuHMM")
-library("ggplot2")
-library("ggsn")
-library("circular")
-library("parallel")
-library(cvms)
-library(broom)    # tidy()
+library(caret)
+library(VUROCS)
+library(pROC)
+library(mgcv)
 library(tibble)
 library(qwraps2)
-library(caret)
-library(data.table)
-library(pROC)
-library(VUROCS)
+
 
 op <- options(digits.secs=6)
 options(expressions = 20000)
@@ -253,7 +226,7 @@ table<-data_long%>% group_by(Model, variable)%>%
   mutate_if(is.numeric, round, digits=2) %>%
   mutate_if(is.numeric, format, nsmall = 2) 
   
-table$mean_sd<-paste0( table$mean, "±", table$sd)
+table$mean_sd<-paste0( table$mean, "Â±", table$sd)
 table_final<-dcast(table, Model ~ variable, value.var ="mean_sd")
 
 write.csv(table_final,"D:/Dropbox/PhD/All.GPSandAXYS/AXY_DATA_METHODS_PAPER_NO_ID/HMMs/summary_0_0.09_raw.csv", row.names = FALSE)
