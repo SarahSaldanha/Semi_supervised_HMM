@@ -76,32 +76,7 @@ Merged_step <-
     
     
     
-    
-    
-      
-    
-    output[grepl("l", names(output))]
-    
-    output[which.max(as.numeric(do.call(rbind, output)[,2]))]
-    
-    
-    
-    file_name <-Original_files[15]
-    it<-str_split(file_name, "_")
-    it<-it[[1]]
-    it<-it[3]
-    it<-str_sub(it,1,-5)
-    it
-    #Read in the HMM output
-    output<- readRDS(paste0("./HMMS/fitTrack_0.75/", iteration, "/", file_name))
-    output[[1]]
-    
-   
-   
-   X<-min(unlist(unname(lapply(output, function(x) x$mod$minimum))), output[[1]]$mod$minimum) # is the same as the original model - good :)
-   
-   BestModel<- ifelse(output[[1]]$mod$minimum == X, 1, ifelse( output[[1]][[1]]$mod$minimum == X, 2, ifelse(output[[1]][[2]]$mod$minimum == X, 3, ifelse(output[[1]][[3]]$mod$minimum == X, 4, ifelse(output[[1]][[4]]$mod$minimum == X, 4, ifelse(output[[1]][[5]]$mod$minimum == X, 6, ifelse(output[[1]][[6]]$mod$minimum == X, 7, ifelse(output[[1]][[7]]$mod$minimum == X, 7, ifelse(output[[1]][[8]]$mod$minimum == X, 9, ifelse(output[[1]][[9]]$mod$minimum == X, 10, 11))))))))))
-   
+
    
    
    
