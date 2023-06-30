@@ -1,38 +1,19 @@
 
 
-library(dplyr)          ## data manipulation
-library(tidyr)          ## data manipulation
-library(ggplot2)        ## visualization
-library(sf)             ## data manipulation spatial data
-library(kableExtra)
-library(janitor)
-library(RStoolbox)
+library(dplyr)       
+library(tidyr)         
+library(lubridate)      
+library(ggplot2)   
 library(stringr)
-library(reshape2)
-library(chron)
-library(assertthat)
-library(maptools)
-library (stringr)
-library (rgdal)
-library(lubridate)
-library(zoo)
-library(plotly)
-library(geosphere)
-library(data.table)
-library("momentuHMM")
-library("ggplot2")
-library("ggsn")
-library("circular")
-library("parallel")
-library(cvms)
-library(broom)    # tidy()
-library(tibble)
+library(caret)
+library(VUROCS)
+library(pROC)
+library(mgcv)
 library(qwraps2)
 library(caret)
 library(data.table)
 library(purrr)
-library(pROC)
-library(VUROCS)
+
 op <- options(digits.secs=6)
 options(expressions = 20000)
 
